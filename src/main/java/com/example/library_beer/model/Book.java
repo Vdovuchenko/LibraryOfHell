@@ -15,9 +15,10 @@ public class Book {
     private String title;
     @Column(name = "author")
     private String author;
-
     @Column(name = "publication_date")
     private Date publicationDate;
+    @Column(name="genre")
+    private String genre;
 
 
     public long getId() {
@@ -50,5 +51,13 @@ public class Book {
 
     public void setPublicationDate(Date publicationDate) {
         this.publicationDate = publicationDate;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }

@@ -32,6 +32,10 @@
                 <a th:href="@{'/page/' + ${currentPage} + '?sortField=publicationDate&sortDir=' + ${reverseSortDir}}">
                     Book Publication Date</a>
             </th>
+            <th>
+                <a th:href="@{'/page/' + ${currentPage} + '?sortField=genre&sortDir=' + ${reverseSortDir}}">
+                    Book Genre</a>
+            </th>
             <th> Actions </th>
         </tr>
         </thead>
@@ -40,6 +44,7 @@
             <td th:text="${book.title}"></td>
             <td th:text="${book.author}"></td>
             <td th:text="${book.publicationDate}"></td>
+            <td th:text="${book.genre}"></td>
             <td> <a th:href="@{/showFormForUpdate/{id}(id=${book.id})}" class="btn btn-primary">Update</a>
                 <a th:href="@{/deleteBook/{id}(id=${book.id})}" class="btn btn-danger">Delete</a>
             </td>
