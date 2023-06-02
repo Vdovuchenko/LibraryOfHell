@@ -2,7 +2,7 @@ package com.example.library_beer.model;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
+import java.time.Year;
 
 @Entity
 @Table(name = "books")
@@ -16,7 +16,8 @@ public class Book {
     @Column(name = "author")
     private String author;
     @Column(name = "publication_date")
-    private Date publicationDate;
+    @Temporal(TemporalType.DATE)
+    private Year publicationYear;
     @Column(name="genre")
     private String genre;
 
@@ -45,12 +46,12 @@ public class Book {
         this.author = author;
     }
 
-    public Date getPublicationDate() {
-        return publicationDate;
+    public Year getPublicationYear() {
+        return publicationYear;
     }
 
-    public void setPublicationDate(Date publicationDate) {
-        this.publicationDate = publicationDate;
+    public void setPublicationYear(Year publicationYear) {
+        this.publicationYear = publicationYear;
     }
 
     public String getGenre() {
